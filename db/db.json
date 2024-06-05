@@ -1,0 +1,303 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "fuzhongqi",
+      "password": "123456",
+      "email": "1597588890@qq.com",
+      "userBalance": 1000,
+      "userCreditRank": 1,
+      "userCurrentExp": 0
+    }
+  ],
+  "tasks": [
+    {
+      "task_rank": 1,
+      "subtask_nums": 5,
+      "task_status": "进行中",
+      "id": 2,
+      "task_number": "T002",
+      "publisher": "fuzhongqi",
+      "task_name": "数据标注任务",
+      "task_description": "完成对给定图片的数据标注工作。",
+      "data_type": "图片",
+      "question_type": "单选题",
+      "options": [
+        "选项A",
+        "选项B",
+        "选项C"
+      ],
+      "other_description": "请在截止日期前完成标注，并确保标注质量。",
+      "deadline": "2024-06-30",
+      "reward": "500元"
+    },
+    {
+      "task_rank": 1,
+      "subtask_nums": 10,
+      "task_status": "进行中",
+      "id": 1,
+      "task_number": "T001",
+      "publisher": "fuzhongqi",
+      "task_name": "文本校对任务",
+      "task_description": "校对文本内容，确保无语法错误。",
+      "data_type": "文字",
+      "question_type": "多选题",
+      "options": [
+        "选项1",
+        "选项2",
+        "选项3",
+        "选项4"
+      ],
+      "other_description": "文本校对需要在一周内完成。",
+      "deadline": "2024-05-31",
+      "reward": "300元"
+    },
+    {
+      "task_status": "提前终止",
+      "task_rank": 1,
+      "id": 3,
+      "task_number": "T003",
+      "publisher": "王五",
+      "task_name": "框图绘制任务",
+      "task_description": "根据要求绘制框图。",
+      "data_type": "框图",
+      "question_type": "框图题",
+      "options": [],
+      "other_description": "框图需要清晰表达逻辑关系。",
+      "deadline": "2024-07-15",
+      "reward": "800元"
+    },
+    {
+      "task_rank": 1,
+      "subtask_nums": 3,
+      "task_status": "进行中",
+      "id": 4,
+      "task_number": "T004",
+      "publisher": "fuzhongqi",
+      "task_name": "图片框图任务",
+      "task_description": "完成对给定图片的框图工作，要求框出图中小狗的位置。",
+      "data_type": "图片",
+      "question_type": "框图题",
+      "options": [],
+      "other_description": "请在截止日期前完成标注，并确保标注质量。",
+      "deadline": "2024-06-30",
+      "reward": "500元"
+    },
+    {
+      "task_rank": 1,
+      "subtask_nums": 3,
+      "task_status": "审核中",
+      "id": 5,
+      "task_number": "T004",
+      "publisher": "fuzhongqi",
+      "task_name": "图片框图任务",
+      "task_description": "完成对给定图片的框图工作，要求框出图中小狗的位置。",
+      "data_type": "图片",
+      "question_type": "框图题",
+      "options": [],
+      "other_description": "请在截止日期前完成标注，并确保标注质量。",
+      "deadline": "2024-06-30",
+      "reward": "500元"
+    }
+  ],
+  "sub_tasks": [
+    {
+      "id": 1,
+      "task_id": 1,
+      "subtask_index": 1,
+      "content": "测试数据1",
+      "receiver": "fuzhongqi",
+      "finisher": null,
+      "answer": "test",
+      "finish_time": null,
+      "subtask_status": "已完成"
+    },
+    {
+      "id": 2,
+      "task_id": 1,
+      "subtask_index": 2,
+      "content": "测试数据2",
+      "receiver": "fuzhongqi",
+      "finisher": null,
+      "answer": null,
+      "finish_time": null,
+      "subtask_status": "未完成"
+    },
+    {
+      "id": 3,
+      "task_id": 1,
+      "subtask_index": 3,
+      "content": "测试数据3",
+      "receiver": "fuzhongqi",
+      "finisher": null,
+      "answer": "test",
+      "finish_time": null,
+      "subtask_status": "已完成"
+    },
+    {
+      "id": 4,
+      "task_id": 1,
+      "subtask_index": 4,
+      "content": "测试数据4",
+      "receiver": "fuzhongqi",
+      "finisher": null,
+      "answer": null,
+      "finish_time": null,
+      "subtask_status": "未完成"
+    },
+    {
+      "id": 5,
+      "task_id": 1,
+      "subtask_index": 5,
+      "content": "测试数据5",
+      "receiver": null,
+      "finisher": null,
+      "answer": null,
+      "finish_time": null,
+      "subtask_status": "未领取"
+    },
+    {
+      "id": 6,
+      "task_id": 1,
+      "subtask_index": 6,
+      "content": "测试数据6",
+      "receiver": null,
+      "finisher": null,
+      "answer": null,
+      "finish_time": null,
+      "subtask_status": "未领取"
+    },
+    {
+      "id": 7,
+      "task_id": 1,
+      "subtask_index": 7,
+      "content": "测试数据7",
+      "receiver": null,
+      "finisher": null,
+      "answer": null,
+      "finish_time": null,
+      "subtask_status": "未领取"
+    },
+    {
+      "id": 8,
+      "task_id": 1,
+      "subtask_index": 8,
+      "content": "测试数据8",
+      "receiver": null,
+      "finisher": null,
+      "answer": null,
+      "finish_time": null,
+      "subtask_status": "未领取"
+    },
+    {
+      "id": 9,
+      "task_id": 1,
+      "subtask_index": 9,
+      "content": "测试数据9",
+      "receiver": null,
+      "finisher": null,
+      "answer": null,
+      "finish_time": null,
+      "subtask_status": "举报中"
+    },
+    {
+      "id": 10,
+      "task_id": 1,
+      "subtask_index": 10,
+      "content": "测试数据10",
+      "receiver": null,
+      "finisher": null,
+      "answer": null,
+      "finish_time": null,
+      "subtask_status": "举报已解决"
+    },
+    {
+      "id": 101,
+      "task_id": 2,
+      "subtask_index": 1,
+      "content": "D:\\project\\vue-anotationSystem\\vue-project\\public\\img\\4390286e-d0ed-4d85-bfee-85fb53cd8e0f.png",
+      "receiver": "fuzhongqi",
+      "finisher": null,
+      "answer": null,
+      "finish_time": null,
+      "subtask_status": "未完成"
+    },
+    {
+      "id": 102,
+      "task_id": 2,
+      "subtask_index": 2,
+      "content": "/img/login_bg.jpg",
+      "receiver": "fuzhongqi",
+      "finisher": null,
+      "answer": null,
+      "finish_time": null,
+      "subtask_status": "未完成"
+    },
+    {
+      "id": 103,
+      "task_id": 2,
+      "subtask_index": 3,
+      "content": "/img/login_bg.jpg",
+      "receiver": "fuzhongqi",
+      "finisher": null,
+      "answer": null,
+      "finish_time": null,
+      "subtask_status": "未完成"
+    },
+    {
+      "id": 104,
+      "task_id": 2,
+      "subtask_index": 4,
+      "content": "/img/login_bg.jpg",
+      "receiver": "fuzhongqi",
+      "finisher": null,
+      "answer": null,
+      "finish_time": null,
+      "subtask_status": "未完成"
+    },
+    {
+      "id": 105,
+      "task_id": 2,
+      "subtask_index": 5,
+      "content": "D:\\project\\vue-anotationSystem\\vue-project\\public\\img\\4390286e-d0ed-4d85-bfee-85fb53cd8e0f.png",
+      "receiver": "others",
+      "finisher": null,
+      "answer": null,
+      "finish_time": null,
+      "subtask_status": "未完成"
+    },
+    {
+      "id": 106,
+      "task_id": 4,
+      "subtask_index": 1,
+      "content": "/img/login_bg.jpg",
+      "receiver": "fuzhongqi",
+      "finisher": null,
+      "answer": null,
+      "finish_time": null,
+      "subtask_status": "未完成"
+    },
+    {
+      "id": 107,
+      "task_id": 4,
+      "subtask_index": 2,
+      "content": "/img/4390286e-d0ed-4d85-bfee-85fb53cd8e0f.png",
+      "receiver": "fuzhongqi",
+      "finisher": null,
+      "answer": "[{\"uuid\":\"b972e974-5a7c-4cb0-4c69-ba4a2a2efcd0\",\"x\":0.590909,\"y\":0.0153453,\"width\":0.258741,\"height\":0.204604,\"name\":\"脑袋\",\"color\":\"\"},{\"uuid\":\"66fcd753-376e-47a3-be82-74b930c6cea2\",\"x\":0.0559441,\"y\":0.713555,\"width\":0.893939,\"height\":0.268542,\"name\":\"电影信息\",\"color\":\"#FF0000\"}]",
+      "finish_time": null,
+      "subtask_status": "已完成"
+    },
+    {
+      "id": 108,
+      "task_id": 5,
+      "subtask_index": 1,
+      "content": "/img/login_bg.jpg",
+      "receiver": "fuzhongqi",
+      "finisher": null,
+      "answer": null,
+      "finish_time": null,
+      "subtask_status": "未完成"
+    }
+  ]
+}
