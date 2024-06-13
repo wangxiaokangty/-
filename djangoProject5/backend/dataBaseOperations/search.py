@@ -40,12 +40,10 @@ def get_subtask_id_by_index(task_id,index):
         return None
 
 
-
-
-
 def match_username_with_password(username, password):
     user = User.objects.get(username=username)
-    if user.password == password:
+
+    if user.get_decrpted_password() == password:
         return True
     else:
         return False

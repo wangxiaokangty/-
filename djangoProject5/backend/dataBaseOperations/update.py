@@ -4,6 +4,11 @@ import datetime
 
 def update_user_info(**kwargs):
     try:
+        if "password" in kwargs:
+            user = User.objects.get(username=kwargs["username"])
+            user.set_encrpted_password(kwargs["password"])
+            user.save()
+            return True
         User.objects.filter(username=kwargs["username"]).update(**kwargs)
         return True
     except:

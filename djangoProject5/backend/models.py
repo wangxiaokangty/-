@@ -3,19 +3,25 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 from django.utils import timezone
 
+from backend.universalFunctions.encrypt import encrypt_data, decrypt_data
+
 
 # Create your models here.
 class User(models.Model):
     user_type_choice=[('normalUser','normalUser'),('admin','admin')]
     user_id= models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
     username= models.CharField(default='username', max_length=50,unique=True)
-    password= models.CharField(default='password', max_length=50)
+    password= models.TextField()
     email= models.CharField(default='email', max_length=350)
     userBalance= models.FloatField(default=0.0)
     userCreditRank= models.IntegerField(default=1, validators=[MinValueValidator(0), MaxValueValidator(5)])
     userType= models.CharField(default='normalUser', max_length=20, choices=user_type_choice)
     userCurrentExp= models.IntegerField(default=0)
-
+    #定义加密函数，加密密码属性
+    def set_encrpted_password(self, password):
+        self.password = encrypt_data(password)
+    def get_decrpted_password(self):
+        return decrypt_data(self.password)
 
 
 class Task(models.Model):

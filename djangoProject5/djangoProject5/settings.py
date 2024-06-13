@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import os
+from base64 import b64encode
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-@76w^di+_dhm@-b_ygmo)7ev==1b(8q8!k+-0)g8vhfj1(fb$n'
-
+ENCRYPTION_KEY = os.environ.get('ENCRYPTION_KEY', "Y02xXdUtBvriDqEOSUg8v13CTI6RTKn4301fC7jkloc=")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -80,10 +82,10 @@ CORS_ALLOW_ALL_ORIGINS = True
 DATABASES = {
     'default': {
         'ENGINE': 'mysql.connector.django',
-        'NAME': 'django',
-        'USER': 'root',
-        'PASSWORD' : 'root',
-        'HOST':'localhost',
+        'NAME': 'my_database',
+        'USER': 'my_user',
+        'PASSWORD' : 'my_password',
+        'HOST':'my_mysql_container',
         'PORT': 3306,
     }
 }
@@ -140,3 +142,4 @@ EMAIL_USE_SSL = True
 #EMAIL_USE_TLS = True       # 一般都为False
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 EMAIL_FROM = "Data-label Crowdsoursing Platform Admin"      # 邮箱来自
+

@@ -63,13 +63,13 @@ def log_in(request):
         return HttpResponse(json.dumps({'status': 'error', 'message': 'noUser'}), content_type='application/json')
     # 查看是否是管理员
     if user.userType == 'admin':
-        if password == user.password:
+        if password == user.get_decrpted_password():
             return HttpResponse(json.dumps({'status': 'ok', 'message': '管理员登录成功','type':'admin'}))
         else:
             return HttpResponse(json.dumps({'status': 'error', 'message': 'wrongPassword'}))
     # 普通用户
     else:
-        if password == user.password:
+        if password == user.get_decrpted_password():
             return HttpResponse(json.dumps({'status': 'ok', 'message': '登录成功','type':'normal'}))
         else:
             return HttpResponse(json.dumps({'status': 'error', 'message': 'wrongPassword'}))
@@ -375,12 +375,17 @@ def update_subtask_receiver(request):
     query_dict=request.POST
     task_id=query_dict.get("task_id","")
     receiver = get_user_by_name(query_dict.get("receiver", ""))
+    if not task_id or not receiver:
+        return HttpResponse(json.dumps({"status":"error","message":"任务或领取者不存在"}), content_type='application/json')
+    #发布者不可领取自己的任务
     if not check_not_publisher_receive(task_id,receiver):
         return HttpResponse(json.dumps({"status":"error","message":"发布者不可领取任务"}), content_type='application/json')
+    #未审核任务不可领取
     if get_task_info(task_id=task_id)[0]["task_status"]!="进行中":
         return HttpResponse(json.dumps({"status":"error","message":"任务不在进行中,不可领取"}), content_type='application/json')
-    if not task_id:
-        return HttpResponse(json.dumps({"status":"error","message":"任务不存在"}), content_type='application/json')
+    #领取者星级不足不可领取
+    if receiver.userCreditRank<get_task_info(task_id=task_id)[0]["task_rank"]:
+        return HttpResponse(json.dumps({"status":"error","message":"领取者星级不足"}), content_type='application/json')
     subtask_index=int(query_dict.get("subtask_index",""))
     subtask_id=get_subtask_id_by_index(task_id,subtask_index)
     if not subtask_id:
